@@ -14,6 +14,7 @@ document.getElementsByTagName("head")[0].appendChild(scriptTag);
 window.addEventListener( 'load' , function(){
 alert("ready");
   requestFullScreen();
+  toggleFullScreen(document.body);
 })
 
 function requestFullScreen() {
