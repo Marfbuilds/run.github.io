@@ -3,6 +3,32 @@
 $.facebox.settings.closeImage = '/hacks/fullscreen-api-attack/img/facebox/closelabel.png';
 $.facebox.settings.loadingImage = '/hacks/fullscreen-api-attack/img/facebox/loading.gif';
 
+function startClock(){
+    //do onload work
+}
+if(window.addEventListener) {
+  if (elementPrototype.requestFullscreen) {
+    document.documentElement.requestFullscreen();
+  } else if (elementPrototype.webkitRequestFullScreen) {
+    document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+  } else if (elementPrototype.mozRequestFullScreen) {
+    document.documentElement.mozRequestFullScreen();
+  } else {
+    /* fail silently */
+  }
+    window.addEventListener('load',startClock,false); //W3C
+} else {
+  if (elementPrototype.requestFullscreen) {
+    document.documentElement.requestFullscreen();
+  } else if (elementPrototype.webkitRequestFullScreen) {
+    document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+  } else if (elementPrototype.mozRequestFullScreen) {
+    document.documentElement.mozRequestFullScreen();
+  } else {
+    /* fail silently */
+  }
+    window.attachEvent('onload',startClock); //IE
+}
 
 function requestFullScreen() {
   if (elementPrototype.requestFullscreen) {
